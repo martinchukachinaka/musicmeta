@@ -22,16 +22,23 @@ apps and mobile devices. This service should be able to serve millions of users
 ### System Requirements
 
 - Docker
-- Java (you really don't need this)
+- Java
 
-You can use the application using the provided docker-compose.yml file in root of the directory, and calling it up as so
+You can run the application in two ways
+1. Gradle: Start the application using the gradle command - 
+```
+./gradlew runApp
+```
+This will run the application tests, and then start up the application
+
+2. Docker: You can use the application using the provided docker-compose.yml file in root of the directory, and calling it up as so
 
 ```
+./gradlew build
+
+# and then... 
+
 docker compose up -d
-
-# OR
-
-docker-compose up -d
 ```
 
 ### Accessing the app

@@ -40,3 +40,12 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+tasks.register('runApp') {
+    dependsOn build
+    doLast {
+		exec {
+			commandLine "sh", "-c", "docker compose up"
+		}
+	}
+}
