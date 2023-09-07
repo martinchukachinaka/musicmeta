@@ -1,0 +1,20 @@
+server:
+  port: 8585
+logging:
+  level:
+    com.cc: DEBUG
+spring:
+  application:
+    name: icemusicmeta
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        temp.use_jdbc_metadata_defaults: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url: ${DB_SERVER:jdbc:postgresql://localhost:15430/icemusic}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASS:postgres}
+    driver-class-name: ${DB_DRIVER:org.postgresql.Driver}
