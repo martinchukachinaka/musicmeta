@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "2a3162fa-79cb-4bf1-969a-bfe8207cc6d1",
+		"name": "icemusic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "703184"
+	},
+	"item": [
+		{
+			"name": "artists",
+			"item": [
+				{
+					"name": "load artists",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"biography\": \"Michael Jackson is a music legend who started really young in his life\",\n    \"avatarRef\": \"ref-to-cloudinary\",\n    \"aliases\": [\"Michael Jackson\", \"MJ\", \"Wacko Jacko\"]\n  },\n  {\n    \"biography\": \"Andrea Bocelli is an Italian tenor who has recorded 15 solo albums of both pop and classical music\",\n    \"avatarRef\": \"ref-to-cloudinary\",\n    \"aliases\": [\"Andrea Bocelli\"]\n  },\n  {\n    \"biography\": \"Rod Stewart is a British rock and pop singer and songwriter\",\n    \"avatarRef\": \"ref-to-cloudinary\",\n    \"aliases\": [\"Rod Stewart\", \"Rod\"]\n  },\n  {\n    \"biography\": \"Madonna is an iconic pop singer and actress known for her reinvention and influence in the industry\",\n    \"avatarRef\": \"uuid-ref-2\",\n    \"aliases\": [\"Madonna\", \"Queen of Pop\"]\n  },\n  {\n    \"biography\": \"Elvis Presley was a rock and roll pioneer and cultural icon with a charismatic stage presence\",\n    \"avatarRef\": \"uuid-ref-3\",\n    \"aliases\": [\"Elvis Presley\", \"The King\"]\n  },\n  {\n    \"biography\": \"The Beatles were a legendary British rock band that revolutionized music in the 1960s\",\n    \"avatarRef\": \"uuid-ref-4\",\n    \"aliases\": [\"The Beatles\", \"Fab Four\"]\n  },\n  {\n    \"biography\": \"Bob Marley was a reggae icon and global symbol of peace and love through music\",\n    \"avatarRef\": \"uuid-ref-5\",\n    \"aliases\": [\"Bob Marley\", \"Tuff Gong\"]\n  }\n]\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8585/artists/init",
+							"host": [
+								"localhost"
+							],
+							"port": "8585",
+							"path": [
+								"artists",
+								"init"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find artist",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8585/artists/93477bb6-b675-4256-8d4c-0ccd5dbf7397",
+							"host": [
+								"localhost"
+							],
+							"port": "8585",
+							"path": [
+								"artists",
+								"93477bb6-b675-4256-8d4c-0ccd5dbf7397"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add alias",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"artistId\": \"93477bb6-b675-4256-8d4c-0ccd5dbf7397\",\n    \"alias\": \"New Alias\",\n    \"preferred\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8585/artists/93477bb6-b675-4256-8d4c-0ccd5dbf7397/aliases",
+							"host": [
+								"localhost"
+							],
+							"port": "8585",
+							"path": [
+								"artists",
+								"93477bb6-b675-4256-8d4c-0ccd5dbf7397",
+								"aliases"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update alias",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"artistId\": \"93477bb6-b675-4256-8d4c-0ccd5dbf7397\",\n    \"oldAlias\": \"Michael Jackson\",\n    \"newAlias\": \"Michael Jackson\",\n    \"preferred\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8585/artists/93477bb6-b675-4256-8d4c-0ccd5dbf7397/aliases",
+							"host": [
+								"localhost"
+							],
+							"port": "8585",
+							"path": [
+								"artists",
+								"93477bb6-b675-4256-8d4c-0ccd5dbf7397",
+								"aliases"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete alias",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"artistId\": \"93477bb6-b675-4256-8d4c-0ccd5dbf7397\",\n    \"alias\": \"New Alias\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8585/artists/93477bb6-b675-4256-8d4c-0ccd5dbf7397/aliases",
+							"host": [
+								"localhost"
+							],
+							"port": "8585",
+							"path": [
+								"artists",
+								"93477bb6-b675-4256-8d4c-0ccd5dbf7397",
+								"aliases"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tracks",
+			"item": [
+				{
+					"name": "add track",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"trackName\": \"Billie Jean\",\n    \"artistAlias\": \"Michael Jackson\",\n    \"duration\": 500,\n    \"explicitContent\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8585/artists/93477bb6-b675-4256-8d4c-0ccd5dbf7397/tracks",
+							"host": [
+								"localhost"
+							],
+							"port": "8585",
+							"path": [
+								"artists",
+								"93477bb6-b675-4256-8d4c-0ccd5dbf7397",
+								"tracks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find artist tracks",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8585/artists/93477bb6-b675-4256-8d4c-0ccd5dbf7397/tracks?size=50",
+							"host": [
+								"localhost"
+							],
+							"port": "8585",
+							"path": [
+								"artists",
+								"93477bb6-b675-4256-8d4c-0ccd5dbf7397",
+								"tracks"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "50"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "top-artists",
+			"item": [
+				{
+					"name": "artist-of-the-day",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8585/top-artist",
+							"host": [
+								"localhost"
+							],
+							"port": "8585",
+							"path": [
+								"top-artist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "next-artist-of-the-day",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8585/top-artist?force-next",
+							"host": [
+								"localhost"
+							],
+							"port": "8585",
+							"path": [
+								"top-artist"
+							],
+							"query": [
+								{
+									"key": "force-next",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
