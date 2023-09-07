@@ -18,3 +18,5 @@ spring:
     username: ${DB_USER:postgres}
     password: ${DB_PASS:postgres}
     driver-class-name: ${DB_DRIVER:org.postgresql.Driver}
+
+maxAllowedAliases: 10
