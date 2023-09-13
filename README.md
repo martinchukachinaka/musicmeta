@@ -75,14 +75,15 @@ issue will be to
 ### Capacity Estimations
 
 Server capability: 32 hardware threads, with 8GB of RAM ==> 1000 RPS
-Users: 2,000,000
-1 User requests/day (for tracks/artist of the day) = 150 Requests
-1 User requests/day (for alias updates) = 2-3 Requests (small)
-Requests for 24hrs = 150 X 2000000 ==> 300,000,000
-Requests/s = 300,000,000 / 86400 = 3472.22 ==> 3500 RPS
 
-Considering the low capacity of the servers, we can easily scale vertically to meet requirements or horizontally as well
-to by provisioning 3 of such servers
+- Users: 2,000,000
+- 1 User requests/day (for tracks/artist of the day) = 150 Requests
+- 1 User requests/day (for alias updates) = 2-3 Requests (small)
+- Requests for 24hrs = 150 X 2000000 ==> 300,000,000
+- Requests/s = 300,000,000 / 86400 = 3472.22 ==> 3500 RPS
+
+At off-peek periods, 3 of such servers can handle the number of incoming requests. But at peek periods, 
+we'll need 2000 of such servers to ensure the system holds things together
 
 ## High Level Design
 
