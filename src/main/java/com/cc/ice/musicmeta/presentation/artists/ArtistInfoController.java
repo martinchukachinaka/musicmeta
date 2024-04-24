@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -41,8 +42,11 @@ public class ArtistInfoController {
 	}
 
 	@PostMapping("init")
-	public ResponseEntity<String> initArtists(@Valid @RequestBody List<ArtistRequest> requests) {
-		artistMgr.saveArtists(requests);
-		return ResponseEntity.ok("artists created");
+	public ResponseEntity<Map<String, Object>> initArtists(@Valid @RequestBody List<ArtistRequest> requests) {
+		List<UUID> artistIds = artistMgr.saveArtists(requests);
+		return ResponseEntity.ok(Map.of(
+				"status", "artists created",
+				"artistIds", artistIds
+		));
 	}
 }
