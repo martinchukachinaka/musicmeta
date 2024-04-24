@@ -14,4 +14,6 @@ public interface ArtistMgr {
 	Optional<ArtistInfo> findArtistInfo(UUID id);
 
 	boolean artistsExist();
+
+	List<ArtistInfo> findArtistInfos();
 }

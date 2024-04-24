@@ -43,9 +43,19 @@ tasks.named('test') {
 
 tasks.register('runApp') {
     dependsOn build
+    dependsOn stopApp
     doLast {
 		exec {
 			commandLine "sh", "-c", "docker compose up"
 		}
 	}
+}
+
+tasks.register('stopApp') {
+    dependsOn build
+    doLast {
+        exec {
+            commandLine "sh", "-c", "docker compose down"
+        }
+    }
 }
