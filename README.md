@@ -22,7 +22,7 @@ apps and mobile devices. This service should be able to serve millions of users
 ### System Requirements
 
 - Docker
-- Java
+- Java 17
 
 You can run the application in two ways
 1. Gradle: Start the application using the gradle command - 
