@@ -49,4 +49,10 @@ public class ArtistInfoController {
 				"artistIds", artistIds
 		));
 	}
+
+	@GetMapping
+	public ResponseEntity<List<ArtistInfo>> loadArtists() {
+		List<ArtistInfo> artists = artistMgr.findArtistInfos();
+		return ResponseEntity.ok(artists);
+	}
 }

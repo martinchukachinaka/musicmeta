@@ -3,6 +3,7 @@ package com.cc.ice.musicmeta.application.artists.repo;
 import com.cc.ice.musicmeta.domain.artists.Artist;
 
 import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -27,5 +28,9 @@ public interface ArtistRepo {
 
 	default Optional<Artist> findFirstCreatedArtist() {
 		return Optional.empty();
+	}
+
+	default List<Artist> findArtists() {
+		return Collections.emptyList();
 	}
 }

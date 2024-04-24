@@ -43,4 +43,20 @@ public class ArtistMgrImpl implements ArtistMgr {
 	public boolean artistsExist() {
 		return artistRepo.artistsExists();
 	}
+
+	@Override
+	public List<ArtistInfo> findArtistInfos() {
+		return artistRepo
+				.findArtists()
+				.stream()
+				.map(artist -> ArtistInfo.builder()
+				                         .id(artist.getId())
+				                         .artistName(artist.getArtistName())
+				                         .aliases(artist.getAliases())
+				                         .createdAt(artist.getCreatedAt())
+				                         .lastUpdatedAt(artist.getLastUpdatedAt())
+				                         .biography(artist.getBiography())
+				                         .avatarRef(artist.getAvatarRef())
+				                         .build()).toList();
+	}
 }

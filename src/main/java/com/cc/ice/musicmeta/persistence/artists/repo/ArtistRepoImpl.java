@@ -58,4 +58,9 @@ public class ArtistRepoImpl implements ArtistRepo {
 	public Optional<Artist> findFirstCreatedArtist() {
 		return artistEntityRepo.findFirstByOrderByCreatedAtAsc().map(ArtistEntity::createArtist);
 	}
+
+	@Override
+	public List<Artist> findArtists() {
+		return artistEntityRepo.findAll().stream().map(ArtistEntity::createArtist).toList();
+	}
 }
