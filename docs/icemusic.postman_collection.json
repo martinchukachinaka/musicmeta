@@ -38,6 +38,36 @@
 					"response": []
 				},
 				{
+					"name": "find all artists",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8585/artists",
+							"host": [
+								"localhost"
+							],
+							"port": "8585",
+							"path": [
+								"artists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "find artist",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
